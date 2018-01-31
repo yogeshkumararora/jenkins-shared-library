@@ -29,7 +29,9 @@ def call(String gitRepo) {
 
             stage('SonarQube Scan') {
                 steps {
-                    mvnBuild('sonar:sonar')
+                    withSonarQubeEnv('SonarQube') {
+                        mvnBuild('sonar:sonar')
+                    }
                 }
             }
 
