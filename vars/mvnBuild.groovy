@@ -1,5 +1,5 @@
-def call(String gitRepo) {
+def call(String args) {
 
-    checkOut(gitRepo)
+    sh 'mvn ' ${args}
 
 }

@@ -3,10 +3,21 @@ def call(String gitRepo) {
 
         agent any
 
+        tools {
+            maven 'M3'
+            jdk 'Java8'
+        }
+
         stages {
             stage('checkout') {
                 steps {
                     checkOut(gitRepo)
+                }
+            }
+
+            stage('build') {
+                steps {
+                    mvnBuild('clean compile')
                 }
             }
         }
