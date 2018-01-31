@@ -1,0 +1,3 @@
+@Library ('utils@origin/master') _
+
+standardBuild('sonarlint-demo')
