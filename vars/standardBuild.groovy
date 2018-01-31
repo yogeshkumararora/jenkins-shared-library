@@ -17,7 +17,7 @@ def call(String gitRepo) {
 
             stage('build') {
                 steps {
-                    mvnBuild('clean compile')
+                    mvnBuild('clean compile -Dmaven.test.skip=true')
                 }
             }
 
