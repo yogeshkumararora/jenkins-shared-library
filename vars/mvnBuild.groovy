@@ -1,5 +1,5 @@
 def call(String args) {
 
-    sh 'mvn ' ${args}
+    sh 'mvn ' + args
 
 }
