@@ -9,13 +9,13 @@ def call(String gitRepo) {
         }
 
         stages {
-            stage('checkout') {
+            stage('Checkout') {
                 steps {
                     checkOut(gitRepo)
                 }
             }
 
-            stage('build') {
+            stage('Build') {
                 steps {
                     mvnBuild('clean compile')
                 }
