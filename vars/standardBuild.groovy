@@ -20,6 +20,12 @@ def call(String gitRepo) {
                     mvnBuild('clean compile')
                 }
             }
+
+            stage('Unit Test') {
+                steps {
+                    mvnBuild('test')
+                }
+            }
         }
     }
 }
