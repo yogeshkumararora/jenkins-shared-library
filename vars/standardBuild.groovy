@@ -17,13 +17,19 @@ def call(String gitRepo) {
 
             stage('build') {
                 steps {
-                    mvnBuild('clean compile -Dmaven.test.skip=true')
+                    mvnBuild('clean compile')
                 }
             }
 
             stage('Unit Test') {
                 steps {
                     mvnBuild('test')
+                }
+            }
+
+            stage('SonarQube Scan') {
+                steps {
+                    mvnBuild('sonar:sonar')
                 }
             }
         }
