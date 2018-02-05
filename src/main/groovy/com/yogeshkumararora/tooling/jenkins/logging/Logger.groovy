@@ -1,4 +1,4 @@
-package com.yogeshkumararora.tooling.jenkins
+package com.yogeshkumararora.tooling.jenkins.logging
 
 class Logger implements Serializable{
 
