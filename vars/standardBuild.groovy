@@ -21,7 +21,7 @@ def call(String gitRepo) {
                 }
             }
 
-            stage('Unit Test') {
+            /*stage('Unit Test') {
                 steps {
                     mvnBuild('test')
                 }
@@ -46,7 +46,7 @@ def call(String gitRepo) {
                         }
                     }
                 }
-            }
+            }*/
         }
     }
 }
