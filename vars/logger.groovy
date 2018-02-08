@@ -9,22 +9,22 @@ def getLoggingLevel(String level) {
 
     switch(level) {
         case 'TRACE':
-            result = TRACE
+            result = 1
             break
         case 'DEBUG':
             result = 2
             break
         case 'INFO':
-            result = INFO
+            result = 3
             break
         case 'WARN':
-            result = WARN
+            result = 4
             break
         case 'ERROR':
-            result = ERROR
+            result = 5
             break
         case 'FATAL':
-            result = FATAL
+            result = 6
             break
         default:
             result = INFO // INFO
@@ -32,42 +32,42 @@ def getLoggingLevel(String level) {
     }
 }
 
-def setLoggingLevel(String level = "INFO") {
+/*def setLoggingLevel(String level = "INFO") {
     this.loggingLevel = level
-}
+}*/
 
 def trace(String message) {
-    if(loggingLevel >=TRACE) {
+    if(getLoggingLevel(env.LOGGING_LEVEL) >= 1) {
         println("[" + this.getCurrentTimestamp() + "] TRACE: " + message)
     }
 }
 
 def debug(String message) {
-    if (loggingLevel >= DEBUG) {
+    if (getLoggingLevel(env.LOGGING_LEVEL) >= 2) {
         println("[" + this.getCurrentTimestamp() + "] DEBUG: " + message)
     }
 }
 
 def info(String message) {
-    if(getLoggingLevel(env.LOGGING_LEVEL) >= INFO) {
+    if(getLoggingLevel(env.LOGGING_LEVEL) >= 3) {
         println("[" + this.getCurrentTimestamp() + "] INFO: " + message)
     }
 }
 
 def warn(String message) {
-    if(loggingLevel >= WARN) {
+    if(getLoggingLevel(env.LOGGING_LEVEL) >= 4) {
         println("[" + this.getCurrentTimestamp() + "] WARN: " + message)
     }
 }
 
 def error(String message) {
-    if (loggingLevel >= ERROR) {
+    if (getLoggingLevel(env.LOGGING_LEVEL) >= 5) {
         println("[" + this.getCurrentTimestamp() + "] ERROR: " + message)
     }
 }
 
 def fatal(String message) {
-    if(loggingLevel >= FATAL) {
+    if(getLoggingLevel(env.LOGGING_LEVEL) >= 6) {
         println("[" + this.getCurrentTimestamp() + "] FATAL: " + message)
     }
 }
