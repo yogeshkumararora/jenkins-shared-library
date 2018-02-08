@@ -3,6 +3,11 @@ def call(String gitRepo) {
 
         agent any
 
+        environment {
+            LOGGER_LEVEL = 'DEBUG'
+        }
+
+
         tools {
             maven 'M3'
             jdk 'Java8'
