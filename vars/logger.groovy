@@ -49,6 +49,7 @@ def debug(String message) {
 }
 
 def info(String message) {
+    println("INFO has called : " + getLoggingLevel(env.LOGGING_LEVEL))
     if(getLoggingLevel(env.LOGGING_LEVEL) >= 3) {
         println("[" + this.getCurrentTimestamp() + "] INFO: " + message)
     }
