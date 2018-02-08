@@ -1,9 +1,9 @@
-Integer TRACE = 1
-Integer DEBUG = 2
+/*def Integer TRACE = 1
+def Integer DEBUG = 2
 Integer INFO = 3
 Integer WARN = 4
 Integer ERROR = 5
-Integer FATAL = 6
+Integer FATAL = 6*/
 
 def getLoggingLevel(String level) {
 
@@ -12,7 +12,7 @@ def getLoggingLevel(String level) {
             result = TRACE
             break
         case 'DEBUG':
-            result = DEBUG
+            result = 2
             break
         case 'INFO':
             result = INFO
