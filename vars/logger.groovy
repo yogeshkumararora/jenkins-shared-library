@@ -5,7 +5,7 @@ Integer WARN = 4
 Integer ERROR = 5
 Integer FATAL = 6*/
 
-def loggingLevel = getLoggingLevel(env.LOGGING_LEVEL)
+def loggingLevel
 
 def getLoggingLevel(String level) {
 
@@ -37,18 +37,18 @@ def getLoggingLevel(String level) {
     result
 }
 
-/*def setLoggingLevel(String level = "INFO") {
-    this.loggingLevel = level
-}*/
+def setLoggingLevel(Integer level) {
+    this.loggingLevel = getLoggingLevel(env.LOGGING_LEVEL)
+}
 
 def trace(String message) {
-    if(getLoggingLevel(env.LOGGING_LEVEL) <= 1) {
+    if(loggingLevel <= 1) {
         println("[" + this.getCurrentTimestamp() + "] TRACE: " + message)
     }
 }
 
 def debug(String message) {
-    if (getLoggingLevel(env.LOGGING_LEVEL) <= 2) {
+    if (loggingLevel <= 2) {
         println("[" + this.getCurrentTimestamp() + "] DEBUG: " + message)
     }
 }
@@ -61,19 +61,19 @@ def info(String message) {
 }
 
 def warn(String message) {
-    if(getLoggingLevel(env.LOGGING_LEVEL) <= 4) {
+    if(loggingLevel <= 4) {
         println("[" + this.getCurrentTimestamp() + "] WARN: " + message)
     }
 }
 
 def error(String message) {
-    if (getLoggingLevel(env.LOGGING_LEVEL) <= 5) {
+    if (loggingLevel <= 5) {
         println("[" + this.getCurrentTimestamp() + "] ERROR: " + message)
     }
 }
 
 def fatal(String message) {
-    if(getLoggingLevel(env.LOGGING_LEVEL) <= 6) {
+    if(loggingLevel <= 6) {
         println("[" + this.getCurrentTimestamp() + "] FATAL: " + message)
     }
 }
