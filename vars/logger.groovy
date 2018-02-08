@@ -42,38 +42,38 @@ def setLoggingLevel(Integer level) {
 }
 
 def trace(String message) {
-    if(loggingLevel <= 1) {
+    if(this.loggingLevel <= 1) {
         println("[" + this.getCurrentTimestamp() + "] TRACE: " + message)
     }
 }
 
 def debug(String message) {
-    if (loggingLevel <= 2) {
+    if (this.loggingLevel <= 2) {
         println("[" + this.getCurrentTimestamp() + "] DEBUG: " + message)
     }
 }
 
 def info(String message) {
     println("INFO has called : " + getLoggingLevel(env.LOGGING_LEVEL))
-    if(loggingLevel <= 3) {
+    if(this.loggingLevel <= 3) {
         println("[" + this.getCurrentTimestamp() + "] INFO: " + message)
     }
 }
 
 def warn(String message) {
-    if(loggingLevel <= 4) {
+    if(this.loggingLevel <= 4) {
         println("[" + this.getCurrentTimestamp() + "] WARN: " + message)
     }
 }
 
 def error(String message) {
-    if (loggingLevel <= 5) {
+    if (this.loggingLevel <= 5) {
         println("[" + this.getCurrentTimestamp() + "] ERROR: " + message)
     }
 }
 
 def fatal(String message) {
-    if(loggingLevel <= 6) {
+    if(this.loggingLevel <= 6) {
         println("[" + this.getCurrentTimestamp() + "] FATAL: " + message)
     }
 }
