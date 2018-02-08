@@ -5,7 +5,7 @@ Integer WARN = 4
 Integer ERROR = 5
 Integer FATAL = 6*/
 
-def loggingLevel
+loggingLevel
 
 def getLoggingLevel(String level) {
 
