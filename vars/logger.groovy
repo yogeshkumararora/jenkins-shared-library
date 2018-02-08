@@ -5,5 +5,10 @@ def setLoggingLevel(String level) {
 }
 
 def info(String message) {
-    println("[INFO]:" + message)
+    println("[" + this.getCurrentTimestamp() +"] INFO:" + message)
+}
+
+def getCurrentTimestamp() {
+    def currentDate = new Date()
+    return currentDate.format("dd-MM-yyyy HH:mm:ss.SSS")
 }
