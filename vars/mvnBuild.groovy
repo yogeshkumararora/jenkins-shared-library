@@ -7,6 +7,10 @@ def call(String args) {
         println i
     }
 
+    if("DEBUG".equals(env.LOGGER_LEVEL)) {
+        println("The logger level is set to DEBUG")
+    }
+
     sh 'mvn ' + args
 
 }
