@@ -8,22 +8,22 @@ Integer FATAL = 6
 def getLoggingLevel(String level) {
 
     switch(level) {
-        case "TRACE":
+        case 'TRACE':
             result = TRACE
             break
-        case "DEBUG":
+        case 'DEBUG':
             result = DEBUG
             break
-        case "INFO":
+        case 'INFO':
             result = INFO
             break
-        case "WARN":
+        case 'WARN':
             result = WARN
             break
-        case "ERROR":
+        case 'ERROR':
             result = ERROR
             break
-        case "FATAL":
+        case 'FATAL':
             result = FATAL
             break
         default:
