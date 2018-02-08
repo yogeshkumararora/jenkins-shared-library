@@ -51,7 +51,7 @@ def debug(String message) {
 }
 
 def info(String message) {
-    if(loggingLevel >= INFO) {
+    if(this.loggingLevel >= INFO) {
         println("[" + this.getCurrentTimestamp() + "] INFO: " + message)
     }
 }
