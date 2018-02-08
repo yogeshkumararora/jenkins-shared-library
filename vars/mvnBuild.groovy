@@ -12,7 +12,7 @@ def call(String args) {
     }
 
     this.logger.trace("trace: This should not be printed")
-    this.logger.warn("warn: This should not be printed")
+    this.logger.warn("warn: This should be printed")
 
     sh 'mvn ' + args
 
