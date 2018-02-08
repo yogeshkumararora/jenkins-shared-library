@@ -1,5 +1,3 @@
-loggingLevel = getLoggingLevel(env.LOGGING_LEVEL)
-
 Integer TRACE = 1
 Integer DEBUG = 2
 Integer INFO = 3
@@ -51,7 +49,7 @@ def debug(String message) {
 }
 
 def info(String message) {
-    if(this.loggingLevel >= INFO) {
+    if(getLoggingLevel(env.LOGGING_LEVEL) >= INFO) {
         println("[" + this.getCurrentTimestamp() + "] INFO: " + message)
     }
 }
