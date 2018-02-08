@@ -7,6 +7,8 @@ Integer FATAL = 6*/
 
 def getLoggingLevel(String level) {
 
+    println("getLogging: " + level)
+
     switch(level) {
         case 'TRACE':
             result = 1

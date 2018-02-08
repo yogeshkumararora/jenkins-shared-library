@@ -7,7 +7,6 @@ def call(String gitRepo) {
             LOGGING_LEVEL = 'DEBUG'
         }
 
-
         tools {
             maven 'M3'
             jdk 'Java8'
