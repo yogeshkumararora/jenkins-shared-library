@@ -7,8 +7,6 @@ def call(String gitRepo) {
             LOGGING_LEVEL = 'DEBUG'
         }
 
-        this.setLoggingLevel(env.LOGGING_LEVEL)
-
         tools {
             maven 'M3'
             jdk 'Java8'
