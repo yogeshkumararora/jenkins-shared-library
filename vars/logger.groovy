@@ -6,7 +6,6 @@ Integer ERROR = 5
 Integer FATAL = 6*/
 
 def loggingLevel = getLoggingLevel(env.LOGGING_LEVEL)
-println("loggingLevel:" + loggingLevel)
 
 def getLoggingLevel(String level) {
 

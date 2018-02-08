@@ -11,7 +11,8 @@ def call(String args) {
         println("The logger level is set to DEBUG")
     }
 
-    this.logger.trace("This should not be printed")
+    this.logger.trace("trace: This should not be printed")
+    this.logger.warn("warn: This should not be printed")
 
     sh 'mvn ' + args
 
