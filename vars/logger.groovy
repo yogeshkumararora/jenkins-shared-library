@@ -37,8 +37,8 @@ def getLoggingLevel(String level) {
     result
 }
 
-def setLoggingLevel(Integer level) {
-    this.loggingLevel = getLoggingLevel(env.LOGGING_LEVEL)
+def setLoggingLevel(String level) {
+    this.loggingLevel = getLoggingLevel(level)
 }
 
 def trace(String message) {
