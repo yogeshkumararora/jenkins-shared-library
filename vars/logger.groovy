@@ -29,9 +29,10 @@ def getLoggingLevel(String level) {
             result = 6
             break
         default:
-            result = INFO // INFO
+            result = 3 // INFO
             break
     }
+    result
 }
 
 /*def setLoggingLevel(String level = "INFO") {
