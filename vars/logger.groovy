@@ -1,4 +1,4 @@
-def loggingLevel = getLoggingLevel(env.LOGGING_LEVEL)
+loggingLevel = getLoggingLevel(env.LOGGING_LEVEL)
 
 Integer TRACE = 1
 Integer DEBUG = 2
