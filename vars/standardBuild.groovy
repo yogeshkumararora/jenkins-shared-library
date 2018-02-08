@@ -4,7 +4,7 @@ def call(String gitRepo) {
         agent any
 
         environment {
-            LOGGER_LEVEL = 'DEBUG'
+            LOGGING_LEVEL = 'DEBUG'
         }
 
 

@@ -1,31 +1,77 @@
-def loggingLevel
+def loggingLevel = getLoggingLevel(env.LOGGING_LEVEL)
+
+Integer TRACE = 1
+Integer DEBUG = 2
+Integer INFO = 3
+Integer WARN = 4
+Integer ERROR = 5
+Integer FATAL = 6
+
+def getLoggingLevel(String level) {
+
+    switch(level) {
+        case "TRACE":
+            result = TRACE
+            break
+        case "DEBUG":
+            result = DEBUG
+            break
+        case "INFO":
+            result = INFO
+            break
+        case "WARN":
+            result = WARN
+            break
+        case "ERROR":
+            result = ERROR
+            break
+        case "FATAL":
+            result = FATAL
+            break
+        default:
+            result = INFO // INFO
+            break
+    }
+}
 
 def setLoggingLevel(String level = "INFO") {
     this.loggingLevel = level
 }
 
 def trace(String message) {
-    println("[" + this.getCurrentTimestamp() +"] TRACE: " + message)
+    if(loggingLevel >=TRACE) {
+        println("[" + this.getCurrentTimestamp() + "] TRACE: " + message)
+    }
 }
 
 def debug(String message) {
-    println("[" + this.getCurrentTimestamp() +"] DEBUG: " + message)
+    if (loggingLevel >= DEBUG) {
+        println("[" + this.getCurrentTimestamp() + "] DEBUG: " + message)
+    }
 }
 
 def info(String message) {
-    println("[" + this.getCurrentTimestamp() +"] INFO: " + message)
+    if(loggingLevel >= INFO) {
+        println("[" + this.getCurrentTimestamp() + "] INFO: " + message)
+    }
 }
 
 def warn(String message) {
-    println("[" + this.getCurrentTimestamp() +"] WARN: " + message)
+    if(loggingLevel >= WARN) {
+        println("[" + this.getCurrentTimestamp() + "] WARN: " + message)
+    }
 }
 
 def error(String message) {
-    println("[" + this.getCurrentTimestamp() +"] ERROR: " + message)
+    if (loggingLevel >= ERROR) {
+        println("[" + this.getCurrentTimestamp() + "] ERROR: " + message)
+    }
 }
 
 def fatal(String message) {
-    println("[" + this.getCurrentTimestamp() +"] FATAL: " + message)
+    if(loggingLevel >= FATAL) {
+        println("[" + this.getCurrentTimestamp() + "] FATAL: " + message)
+    }
 }
 
 def getCurrentTimestamp() {
